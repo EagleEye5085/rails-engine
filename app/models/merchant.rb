@@ -13,10 +13,6 @@ class Merchant < ApplicationRecord
     self.items
   end
 
-  def self.merchant_id_exists?(id)
-    all.ids.include?(id)
-  end
-
   def self.find_all_by_name(name)
     where('lower(name) like ?', "%#{name.downcase}%")
   end

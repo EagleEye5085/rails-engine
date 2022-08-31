@@ -24,7 +24,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def update
-    if Merchant.merchant_id_exists?(params[:merchant_id]) || params[:merchant_id] == nil
+    if Merchant.exists?(params[:merchant_id]) || params[:merchant_id] == nil
       Item.find(params[:id]).update(item_params)
       render json: ItemSerializer.new(Item.find(params[:id])), status: :accepted
     else
