@@ -9,4 +9,21 @@ class Merchant < ApplicationRecord
   has_many :transactions, through: :invoices
   has_many :customers, through: :invoices
 
+  def all_items
+    self.items
+  end
+
+  def self.merchant_id_exists?(id)
+    all.ids.include?(id)
+  end
+
+  def self.find_all_by_name(name)
+    where('lower(name) like ?', "%#{name.downcase}%")
+  end
+
+  def self.find_by_name(name)
+    where('lower(name) like ?', "%#{name.downcase}%").first
+  end
+
+
 end
