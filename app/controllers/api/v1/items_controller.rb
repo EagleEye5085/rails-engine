@@ -20,7 +20,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    render json: ItemSerializer.new(Merchant.find(params[:merchant_id]).items.create(item_params)), status: :created
+    render json: ItemSerializer.new(Merchant.find(params[:item][:merchant_id]).items.create(item_params)), status: :created
   end
 
   def update

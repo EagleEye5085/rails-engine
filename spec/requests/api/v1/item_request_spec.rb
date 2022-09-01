@@ -48,10 +48,10 @@ describe 'items api requests' do
     get '/api/v1/items'
 
     item_params = ({
-                name: 'Computer',
-                description: 'Macbook Pro',
-                unit_price: '1200.99',
-                merchant_id: '3'
+                name: 'Super Big Big Mac',
+                description: 'Burger',
+                unit_price: '50.0',
+                merchant_id: '4'
               })
     headers = {"CONTENT_TYPE" => "application/json"}
 

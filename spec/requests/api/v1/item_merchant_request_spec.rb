@@ -9,6 +9,6 @@ describe 'Item-Merchant API' do
     response_body = JSON.parse(response.body, symbolize_names: true)
     item_merchant = response_body[:data]
     expect(response).to be_successful
-    expect(item_merchant[:attributes][:name]).to eq("Ezequiel Weber Jr.")
+    expect(item_merchant[:attributes][:name]).to be_a(String)
   end
 end
