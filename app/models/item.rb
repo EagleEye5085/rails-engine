@@ -16,6 +16,4 @@ class Item < ApplicationRecord
     where('lower(name) like ?', "%#{name.downcase}%").first
   end
 
-# def findbyprice(min = 0, max= Integer::MAX)
-
 end

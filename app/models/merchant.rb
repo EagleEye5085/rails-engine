@@ -7,10 +7,6 @@ class Merchant < ApplicationRecord
   has_many :transactions, through: :invoices
   has_many :customers, through: :invoices
 
-  def all_items
-    self.items
-  end
-
   def self.find_all_by_name(name)
     where('lower(name) like ?', "%#{name.downcase}%")
   end
